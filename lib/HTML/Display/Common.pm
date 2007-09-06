@@ -10,7 +10,7 @@ use strict;
 use HTML::TokeParser;
 use URI::URL;
 use vars qw($VERSION);
-$VERSION='0.37';
+$VERSION='0.38';
 use Carp qw( croak );
 
 =head2 __PACKAGE__-E<gt>new %ARGS

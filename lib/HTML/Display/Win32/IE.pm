@@ -3,7 +3,7 @@ use strict;
 use Carp qw(carp);
 use parent 'HTML::Display::Win32::OLE';
 use vars qw($VERSION);
-$VERSION='0.37';
+$VERSION='0.38';
 
 =head1 NAME
 

@@ -2,7 +2,7 @@ package HTML::Display::OSX;
 use strict;
 use parent 'HTML::Display::TempFile';
 use vars qw($VERSION);
-$VERSION='0.37';
+$VERSION='0.38';
 
 =head1 NAME
 

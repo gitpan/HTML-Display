@@ -1,11 +1,11 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         HTML-Display
-version:      0.37
+version:      0.38
 version_from: lib/HTML/Display.pm
 installdirs:  site
 requires:
-    HTML::TokeParser:              2
+    HTML::TokeParser::Simple:      2
     LWP:                           5.69
     parent:                        0.218
     Test::Harness:                 2.3

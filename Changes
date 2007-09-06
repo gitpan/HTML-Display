@@ -1,3 +1,6 @@
+v0.38 - 20070906
+    * Add missing prerequisite of HTML::TokeParser::Simple
+
 v0.37 - 20070905
     * Spun off as a separate distribution
     * Co-maintainer is DAXIM

@@ -1,7 +1,7 @@
 package HTML::Display::Win32;
 use strict;
 use vars qw($VERSION);
-$VERSION='0.37';
+$VERSION='0.38';
 
 =head1 NAME
 

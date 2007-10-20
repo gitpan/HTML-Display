@@ -1,17 +1,17 @@
-#!/opt/perl58/bin/perl -w
+#!/opt/perl/bin/perl -w
 
 use Test::More 'no_plan';
 
 package Catch;
 
 sub TIEHANDLE {
-    my($class, $var) = @_;
-    return bless { var => $var }, $class;
+	my($class, $var) = @_;
+	return bless { var => $var }, $class;
 }
 
 sub PRINT  {
-    my($self) = shift;
-    ${'main::'.$self->{var}} .= join '', @_;
+	my($self) = shift;
+	${'main::'.$self->{var}} .= join '', @_;
 }
 
 sub OPEN  {}    # XXX Hackery in case the user redirects
@@ -31,21 +31,7 @@ $SIG{__WARN__} = sub { $main::_STDERR_ .= join '', @_; };
 tie *STDOUT, 'Catch', '_STDOUT_' or die $!;
 tie *STDERR, 'Catch', '_STDERR_' or die $!;
 
-SKIP: {
-    # A header testing whether we find all prerequisites :
-      # Check for module HTML::Display
-  eval { require HTML::Display };
-  skip "Need module HTML::Display to run this test", 1
-    if $@;
-
-  # Check for module strict
-  eval { require strict };
-  skip "Need module strict to run this test", 1
-    if $@;
-
-
-    # The original POD test
-        undef $main::_STDOUT_;
+    undef $main::_STDOUT_;
     undef $main::_STDERR_;
 eval q{
   my $example = sub {
@@ -54,6 +40,7 @@ eval q{
 #line 15 lib/HTML/Display.pm
   my $html = "foo\n";
   %HTML::Display::os_default = ();
+  delete $ENV{PERL_HTML_DISPLAY_CLASS};
 
 
 
@@ -64,6 +51,7 @@ eval q{
   # or $ENV{PERL_HTML_DISPLAY_COMMAND}
   # or the operating system, in that order
   my $browser = HTML::Display->new();
+  warn "# Displaying HTML using " . ref $browser;
   my $location = "http://www.google.com/";
   $browser->display(html => $html, location => $location);
 
@@ -79,27 +67,13 @@ eval q{
 };
 is($@, '', "example from line 15");
 
-};
-SKIP: {
-    # A header testing whether we find all prerequisites :
-      # Check for module HTML::Display
-  eval { require HTML::Display };
-  skip "Need module HTML::Display to run this test", 1
-    if $@;
-
-  # Check for module strict
-  eval { require strict };
-  skip "Need module strict to run this test", 1
-    if $@;
-
-
-    # The original POD test
-    {
+{
     undef $main::_STDOUT_;
     undef $main::_STDERR_;
 #line 15 lib/HTML/Display.pm
   my $html = "foo\n";
   %HTML::Display::os_default = ();
+  delete $ENV{PERL_HTML_DISPLAY_CLASS};
 
 
 
@@ -110,6 +84,7 @@ SKIP: {
   # or $ENV{PERL_HTML_DISPLAY_COMMAND}
   # or the operating system, in that order
   my $browser = HTML::Display->new();
+  warn "# Displaying HTML using " . ref $browser;
   my $location = "http://www.google.com/";
   $browser->display(html => $html, location => $location);
 
@@ -125,26 +100,16 @@ SKIP: {
     undef $main::_STDERR_;
 }
 
-};
-SKIP: {
-    # A header testing whether we find all prerequisites :
-    
-    # The original POD test
-        undef $main::_STDOUT_;
+    undef $main::_STDOUT_;
     undef $main::_STDERR_;
 
-};
-SKIP: {
-    # A header testing whether we find all prerequisites :
-    
-    # The original POD test
-        undef $main::_STDOUT_;
+    undef $main::_STDOUT_;
     undef $main::_STDERR_;
 eval q{
   my $example = sub {
     local $^W = 0;
 
-#line 79 lib/HTML/Display.pm
+#line 81 lib/HTML/Display.pm
 
   # Install class for MagicOS
   $HTML::Display::os_default{"HTML::Display::MagicOS"}
@@ -154,14 +119,8 @@ eval q{
 
   }
 };
-is($@, '', "example from line 79");
+is($@, '', "example from line 81");
 
-};
-SKIP: {
-    # A header testing whether we find all prerequisites :
-    
-    # The original POD test
-        undef $main::_STDOUT_;
+    undef $main::_STDOUT_;
     undef $main::_STDERR_;
 
-};

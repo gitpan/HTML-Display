@@ -3,7 +3,7 @@ use strict;
 use HTML::TokeParser;
 use Carp qw( croak );
 use vars qw( $VERSION );
-$VERSION='0.38';
+$VERSION='0.39';
 
 =head1 NAME
 
@@ -14,6 +14,7 @@ HTML::Display - display HTML locally in a browser
 =for example
   my $html = "foo\n";
   %HTML::Display::os_default = ();
+  delete $ENV{PERL_HTML_DISPLAY_CLASS};
 
 =for example begin
 
@@ -24,6 +25,7 @@ HTML::Display - display HTML locally in a browser
   # or $ENV{PERL_HTML_DISPLAY_COMMAND}
   # or the operating system, in that order
   my $browser = HTML::Display->new();
+  warn "# Displaying HTML using " . ref $browser;
   my $location = "http://www.google.com/";
   $browser->display(html => $html, location => $location);
 
@@ -187,6 +189,15 @@ Display the same page with the images also working :
   perl -MLWP::Simple -MHTML::Display -e "display html => get('http://www.google.com'),
                                                  location => 'http://www.google.com'"
 
+=head1 AUTHOR
+
+Copyright (c) 2004-2007 Max Maischein C<< <corion@cpan.org> >>
+
+=head1 LICENSE
+
+This module is released under the same terms as Perl itself.
+
 =cut
+
 
 1;

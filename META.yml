@@ -1,15 +1,18 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         HTML-Display
-version:      0.38
-version_from: lib/HTML/Display.pm
-installdirs:  site
-requires:
+--- #YAML:1.0
+name:                HTML-Display
+version:             0.39
+abstract:            display HTML locally in a browser
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.36_01
+distribution_type:   module
+requires:     
     HTML::TokeParser::Simple:      2
     LWP:                           5.69
     parent:                        0.218
     Test::Harness:                 2.3
     URI::URL:                      0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
+author:
+    - Max Maischein <corion@cpan.org>

@@ -23,8 +23,8 @@ elsif ($Test::Pod::VERSION < 0.95) {
   plan skip_all => "Test::Pod 0.95 required for testing POD";
 }
 else {
-  my $blib = File::Spec->catfile(qw(blib lib));
-  find(\&wanted, $blib, 'bin');
+  my @dirs = grep { -d } (File::Spec->catfile(qw(blib lib)), 'bin', 'scripts');
+  find(\&wanted, @dirs);
   plan tests => scalar @files;
   foreach my $file (@files) {
     pod_file_ok($file);

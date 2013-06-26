@@ -1,3 +1,7 @@
+0.40 - 20130626
+    * Adress RT #86431 - tempfile() receiving "undef" as template parameter
+      throws a warning in some versions of File::Temp.
+
 v0.39 - 20071020
     * Added LICENSE and AUTHOR information, thanks to David Paleino for
       pointing out that it was missing.

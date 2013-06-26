@@ -2,7 +2,7 @@ package HTML::Display::Phoenix;
 use strict;
 use parent 'HTML::Display::TempFile';
 use vars qw($VERSION);
-$VERSION='0.39';
+$VERSION='0.40';
 
 =head1 NAME
 
@@ -23,7 +23,7 @@ sub browsercmd { "phoenix %s" };
 
 =head1 AUTHOR
 
-Copyright (c) 2004-2007 Max Maischein C<< <corion@cpan.org> >>
+Copyright (c) 2004-2013 Max Maischein C<< <corion@cpan.org> >>
 
 =head1 LICENSE
 

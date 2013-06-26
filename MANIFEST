@@ -41,3 +41,4 @@ t/embedded-HTML-Display-Win32-OLE.t
 t/embedded-HTML-Display-Win32.t
 t/embedded-HTML-Display.t
 META.yml                                 Module meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)

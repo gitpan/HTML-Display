@@ -10,7 +10,7 @@ use strict;
 use HTML::TokeParser;
 use URI::URL;
 use vars qw($VERSION);
-$VERSION='0.39';
+$VERSION='0.40';
 use Carp qw( croak );
 
 =head2 __PACKAGE__-E<gt>new %ARGS
@@ -201,7 +201,7 @@ sub display {
 
 =head1 AUTHOR
 
-Copyright (c) 2004-2007 Max Maischein C<< <corion@cpan.org> >>
+Copyright (c) 2004-2013 Max Maischein C<< <corion@cpan.org> >>
 
 =head1 LICENSE
 

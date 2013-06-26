@@ -2,7 +2,7 @@ package HTML::Display::TempFile;
 use strict;
 use parent 'HTML::Display::Common';
 use vars qw($VERSION);
-$VERSION='0.39';
+$VERSION='0.40';
 
 =head1 NAME
 
@@ -31,7 +31,7 @@ sub display_html {
   $self->cleanup_tempfiles;  
 
   require File::Temp;
-  my($tempfh, $tempfile) = File::Temp::tempfile(undef, SUFFIX => '.html');
+  my($tempfh, $tempfile) = File::Temp::tempfile(SUFFIX => '.html');
   print $tempfh $html;
   close $tempfh;
 
@@ -55,7 +55,7 @@ sub browsercmd { $_[0]->{browsercmd} };
 
 =head1 AUTHOR
 
-Copyright (c) 2004-2007 Max Maischein C<< <corion@cpan.org> >>
+Copyright (c) 2004-2013 Max Maischein C<< <corion@cpan.org> >>
 
 =head1 LICENSE
 
